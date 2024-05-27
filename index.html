@@ -1,774 +1,436 @@
-<!-- SOURCE CODE DARI LOLHUMAN -->
-
-<!-- Nyomot? silakan gada yang larang -->
-
-
-
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>YanzBotz - Api</title>
 
-    <meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="https://telegra.ph/file/f90fa948e64f8d9499bd0.jpg" rel="icon">
+<link href="https://telegra.ph/file/f90fa948e64f8d9499bd0.jpg" rel="apple-touch-icon">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Original+Surfer&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-       <meta name="description" content="Rezex bakal menjadi rest api untuk kedepannya.">
+<link href="https://ferdiz-afk.github.io/Nice/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://ferdiz-afk.github.io/Nice/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="https://ferdiz-afk.github.io/Nice/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+<link href="https://ferdiz-afk.github.io/Nice/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+<link href="https://ferdiz-afk.github.io/Nice/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+<link href="https://ferdiz-afk.github.io/Nice/assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
+<link href="https://ferdiz-afk.github.io/Nice/assets/css/style.css" rel="stylesheet">
 
+<link rel="stylesheet" type="text/css" href="https://dropways.github.io/deskapp/vendors/styles/core.css" />
+<link rel="stylesheet" type="text/css" href="https://dropways.github.io/deskapp/vendors/styles/icon-font.min.css" />
+<link rel="stylesheet" type="text/css" href="https://dropways.github.io/deskapp/src/plugins/cropperjs/dist/cropper.css" />
+<link rel="stylesheet" type="text/css" href="https://dropways.github.io/deskapp/vendors/styles/style.css" />
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css" type="text/css" media="all" />
+<style>
+    /* Add your custom animations here */
     
-    
-    <meta name="robots" content="archive, follow, imageindex, index, odp, snippet, translate">
+    .loading-text {
+      animation: shake 2s infinite;
+    }
 
-    <meta name="author" content="Rezex">
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+      20%, 40%, 60%, 80% { transform: translateX(10px); }
+    }
 
-    <title>Rezex</title>
-
-    <meta property="og:site_name" name="og:site_name" content="Rezex">
-
-    <meta property="og:title" name="og:title" content="Rezex">
-
-<meta property="og:description" name="og:description" content="A REST APIs website that provides a wide variety of features for developers.">
-
-<meta property="og:image" content="https://telegra.ph/file/1ae2561e1d80af381700f.jpg">
-
-<link rel="shortcut icon" href="https://telegra.ph/file/1ae2561e1d80af381700f.jpg"/>  
-
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-<script src="https://cdn.rawgit.com/bungfrangki/efeksalju/2a7805c7/efek-salju.js" type="text/javascript"> </script><br><br><br>
-
-<meta name="msapplication-TileColor" content="#ffffff">
-
-    <meta name="theme-color" content="#ffffff">
-
-    <link rel="canonical" href="/">
-
+  </style>
 </head>
-
 <body>
-
-  <body>
-
-  </body>
-
-    <div class="text">
-
-        <div class="WELCOME">
-
-            <p>STATUS : <span class="typed-text"></span><span class="cursor typing"></span></p>
-
-        </div>
-
-        <hr>
-
-<!-- Docs In Here! -->
-
-        <div class="readdocs">
-
-            <p>Learn <a href="/dashboard" class="docs">more.</a></p>
-
-        </div>
-
-    </div>
-
-    <div class="bottom">
-
-        <p>
-
-<!-- Change Instagram Link In Here! -->
-
-<a href="https://chat.whatsapp.com/FRB5jSjjOmeGSFoAx4O1X0" target="_blank" rel="noopener noreferrer" class="sosmed">
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
-
-                 <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
-
-                </svg> Group WhatsApp
-
-    <span data-icon="psa-verified" class="">
-
-        <svg viewBox="0 0 18 18" height="18" width="18" preserveAspectRatio="xMidYMid meet" class="" version="1.1" x="0px" y="0px" enable-background="new 0 0 18 18">
-
-            <title>psa-verified</title>
-
-            <polygon id="Star-2" fill="#00DA60" points="9,16 7.1,16.9 5.8,15.2 3.7,15.1 3.4,13 1.5,12 2.2,9.9 1.1,8.2 2.6,6.7 2.4,4.6 4.5,4 5.3,2 7.4,2.4 9,1.1 10.7,2.4 12.7,2 13.6,4 15.6,4.6 15.5,6.7 17,8.2 15.9,9.9 16.5,12 14.7,13 14.3,15.1 12.2,15.2 10.9,16.9 "></polygon>
-
-            <polygon id="Check-Icon" fill="#FFFFFF" points="13.1,7.3 12.2,6.5 8.1,10.6 5.9,8.5 5,9.4 8,12.4 "></polygon>
-
-        </svg>
-
-    </span>
-
-</a>            
-
-        </p>
-
-    </div>
-
-</body>
-
-    <style>
-
-@import url(https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap);
-
-* {
-
-    padding: 0;
-
-    margin: 0;
-
-    box-sizing: border-box;
-
-    font-family: Ubuntu, sans-serif
-
-}
-
-
-
-html {
-
-    background: url("https://telegra.ph/file/1ae2561e1d80af381700f.jpg") no-repeat center center fixed;
-
-    -webkit-background-size: cover;
-
-    -moz-background-size: cover;
-
-    -o-background-size: cover;
-
-    background-size: cover
-
-}
-
-
-
-body {
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    min-height: 100vh
-
-}
-
-
-
-div.text {
-
-    position: absolute
-
-}
-
-
-
-div.text .status {
-
-    position: relative;
-
-    animation: animetop .8s
-
-}
-
-
-
-div.text .readdocs {
-
-    position: relative;
-
-    animation: animebot .8s;
-
-    text-align: center
-
-}
-
-
-
-@keyframes animetop {
-
-    0% {
-
-        top: -200px;
-
-        opacity: 0
-
-    }
-
-    100% {
-
-        top: 0;
-
-        opacity: 1
-
-    }
-
-}
-
-
-
-@keyframes animebot {
-
-    0% {
-
-        top: 200px;
-
-        opacity: 0
-
-    }
-
-    100% {
-
-        top: 0;
-
-        opacity: 1
-
-    }
-
-}
-
-
-
-p {
-
-    color: rgba(255, 255, 255, .8);
-
-    letter-spacing: .15em;
-
-    font-size: 15px!important;
-
-    font-weight: 600
-
-}
-
-
-
-a {
-
-    text-decoration: none;
-
-    color: rgba(255, 255, 255, .5)
-
-}
-
-
-
-a.sosmed {
-
-    color: rgba(255, 255, 255, .8)
-
-}
-
-
-
-a:hover {
-
-    text-decoration: none;
-
-    color: rgba(255, 255, 255, 1)
-
-}
-
-
-
-.typed-text {
-
-    color: #0f0
-
-}
-
-
-
-.cursor {
-
-    overflow: hidden;
-
-    border-right: .15em solid orange;
-
-    white-space: nowrap;
-
-    margin: 0 auto;
-
-    letter-spacing: .15em;
-
-    animation: typing 1.5s steps(40, end), blink-caret .75s step-end infinite
-
-}
-
-
-
-@keyframes typing {
-
-    from {
-
-        width: 0
-
-    }
-
-    to {
-
-        width: 100%
-
-    }
-
-}
-
-
-
-@keyframes blink-caret {
-
-    from,
-
-    to {
-
-        border-color: transparent
-
-    }
-
-    50% {
-
-        border-color: orange
-
-    }
-
-}
-
-
-
-hr {
-
-    margin: 10px auto;
-
-    position: relative;
-
-    background: rgba(255, 255, 255, .5);
-
-    width: 80%;
-
-    height: 2px
-
-}
-
-
-
-div.bottom {
-
-    position: fixed;
-
-    left: 50%;
-
-    bottom: 50px;
-
-    transform: translate(-50%, -50%);
-
-    margin: 0 auto
-
-}
-        .imgBx {
-
-    max-width: -200px;
-
-    animation: animate 5s linear infinite;
-
-}
-
-@keyframes animate
-
-{
-
-    0%,100%
-
-    {
-
-        transform: translateY(50px);
-
-    }
-
-    50% 
-
-    {
-
-        transform: translateY(100px);
-
-    }
-
-}
-
-
-
-.sci {
-
-    position: absolute;
-
-    right: -25px;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    flex-direction: column;
-
-}
-
-
-
-.sci li {
-
-    list-style: none;
-
-}
-
-
-
-.sci li a {
-
-    text-decoration: none;
-
-    width: 50px;
-
-    height: 50px;
-
-    background: #fff;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    border-radius: 50%;
-
-    margin: 5px 0;
-
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-
-}
-
-
-
-.sci li a img {
-
-    transform: scale(0.6);
-
-    transition: 0.5s;
-
-}
-
-
-
-.sci li:hover a img {
-
-    transform: scale(0.6) rotate(360deg);
-
-}
-
-header .logo {
-    color: #fd21bb;
-    font-weight: 700;
-    text-decoration: none;
-    font-size: 2.5em;
-}
-
-header ul {
-    display: flex;
-}
-
-header ul li {
-    list-style: none;
-    margin: 0 10px;
-}
-
-header ul li a {
-    text-decoration: none;
-    font-weight: 500;
-    color: #000000;
-    padding: 8px 15px;
-    border-radius: 25px;
-}
-
-header ul li a:hover,
-header ul li a.active {
-    background: #fff;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-}
-
-.content {
-    transform: translateX(-100px);
-    max-width: 700px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-top: 1px solid rgba(255, 255, 255, 0.5);
-    border-left: 1px solid rgba(255, 255, 255, 0.5);
-    padding: 40px;
-    padding-left: 110px;
-}
-
-.content h2 {
-    font-size: 2.5em;
-    color: #fd21bb;
-    padding-bottom: 10px;
-}
-
-.content p {
-    font-size: 19px;
-    color: #000000;
-}
-
-.content a {
-    display: inline-block;
-    padding: 15px 30px;
-    background: #fff;
-    color: #000000;
-    margin-top: 20px;
-    border-radius: 30px;
-    font-size: 1.2em;
-    font-weight: 500;
-    text-decoration: none;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-} 
-
-.imgBx {
-    max-width: -200px;
-    animation: animate 5s linear infinite;
-}
-@keyframes animate
-{
-    0%,100%
-    {
-        transform: translateY(50px);
-    }
-    50% 
-    {
-        transform: translateY(100px);
-    }
-}
-
-.sci {
-    position: absolute;
-    right: -25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.sci li {
-    list-style: none;
-}
-
-.sci li a {
-    text-decoration: none;
-    width: 50px;
-    height: 50px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    margin: 5px 0;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-}
-
-.sci li a img {
-    transform: scale(0.6);
-    transition: 0.5s;
-}
-
-.sci li:hover a img {
-    transform: scale(0.6) rotate(360deg);
-}
-
-.copyrightText {
-    position: absolute;
-    bottom: 2px;
-    left: 70px;
-    color: rgb(177, 177, 177);
-}
-
-@media (max-width: 1200px) {
-    .container {
-        position: relative;
-        width: calc(100% - 20px);
-    }
-}
-
-@media (max-width: 992px) {
-    section {
-        padding: 50px 10px 10px;
-    }
-    .container {
-        flex-direction: column;
-        height: auto;
-        padding: 20px;
-    }
-    .container .content {
-        transform: translateX(0px);
-        max-width: 100%;
-        padding: 30px;
-        margin-top: -40px;
-    }
-    header {
-        position: relative;
-        flex-direction: column;
-        width: 100%;
-        top: -60px;
-        padding: 20px;
-        right: 0px;
-        left: 0px;
-    }
-    header ul {
-        margin-top: 10px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    header ul li {
-        margin: 2px;
-    }
-}
-header ul li a {
-        display: inline-block;
-    }
-    .sci {
-        position: relative;
-        flex-direction: row;
-        left: 0;
-    }
-    .imgBx {
-        margin-bottom: 50px;
-    }
-    .content a {
-        font-size: 1em;
-        padding: 10px 20px;
-    }
-
-@keyframes animate{
-    0%,100%
-    {
-        transform: translateY(-20px);
-    }
-    50% 
-    {
-        transform: translateY(20px);
-    }
-}
-.sci li a {
-    margin: 0 10px;
-}
-
-@media (max-width: 600px) {
-    .content h2 {
-        font-size: 1.5em;
-        color: #000000;
-    }
-    .imgBx img {
-        max-width: 300px;
-    }
-    }
-
- </style>
-
-</head>
-
-<body>
-
-    <section>
-
-        <div class="container">
-
-            <header>
-                                <ul>
-                                        <li><a href="/" class="active">HOME</a></li>
-                                </ul>
-            </header>
-
-            </div>
-
-            <ul class="sci">
-
-            <li><a href="https://wa.me/6288802101736"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1191px-WhatsApp.svg.png" style="max-width: 50px; max-height: 50px;"></a></li>
-
-            <li><a href="https://github.com/izukioka"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" style="max-width: 50px; max-height: 50px;"></a></li>
-
-            <li><a href="https://instagram.com/kiri_var"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1024px-Instagram_icon.png" style="max-width: 50px; max-height: 50px;"></a></li>
-
-        </ul>
-
-            <p class="®2024."></p>
-
-        </div>
-
-    </section>
-
-</body>
-
-</html>
-
-
-
-</style>
-
-
-
-<script>
-
-const typedTextSpan = document.querySelector(".typed-text"),
-
-    textArray = ["ONLINE", "ONLINE..."],
-
-    typingDelay = 200,
-
-    erasingDelay = 100,
-
-    newTextDelay = 2e3;
-
-let textArrayIndex = 0,
-
-    charIndex = 0;
-
-
-
-function type() { charIndex < textArray[textArrayIndex].length ? (typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex), charIndex++, setTimeout(type, 200)) : setTimeout(erase, 2e3) }
-
-
-
-function erase() { charIndex > 0 ? (typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1), charIndex--, setTimeout(erase, 100)) : (textArrayIndex++, textArrayIndex >= textArray.length && (textArrayIndex = 0), setTimeout(type, 1300)) }
-
-document.addEventListener("DOMContentLoaded", (function() { setTimeout(type, 2250) }));
-
-
-
-$(document).ready((function() {
-
-    $(".changeprofile").submit((function(e) {
-
-        var formObj, formURL = $(this).attr("action"),
-
-            formData = new FormData(this);
-
-        $.ajax({ url: formURL, type: "POST", data: formData, contentType: !1, cache: !1, processData: !1, beforeSend: function() { $("button").attr("disabled", "disabled"), $("input").attr("disabled", "disabled"), $("a").attr("disabled", "disabled"), $(".inibutton").html('<i class="fas fa-spinner fa-spin"></i> Wait') }, success: function(data) { data.includes("Success") ? ($("button").removeAttr("disabled", "disabled"), $("a").removeAttr("disabled", "disabled"), $("input").removeAttr("disabled", "disabled"), $(".inibutton").html("Save"), $.notify({ icon: "tim-icons icon-check-2", message: data }, { type: "success", timer: 3e3, placement: { from: "top", align: "right" } }), window.location = window.location) : ($("button").removeAttr("disabled", "disabled"), $("a").removeAttr("disabled", "disabled"), $("input").removeAttr("disabled", "disabled"), $(".inibutton").html("Save"), $.notify({ icon: "tim-icons icon-simple-remove", message: data }, { type: "danger", timer: 3e3, placement: { from: "top", align: "right" } })) } }), e.preventDefault()
-
-    }))
-
-}))
-
-
-
-</script>
-
-<body>
-
-<div>
-
+<div class="pre-loader">
+			<div class="pre-loader-box">
+				<div class="loader-logo">
+					<img src="https://dropways.github.io/deskapp/vendors/images/deskapp-logo.svg" alt="" />
+				</div>
+				<div class="loader-progress" id="progress_div">
+					<div class="bar" id="bar1"></div>
+				</div>
+				<div class="percent" id="percent1">0%</div>
+				<div class="loading-text">Loading...</div>
+			</div>
+		</div>
+<header id="header" class="header fixed-top d-flex align-items-center" style="width:100%">
+<div class="d-flex align-items-center justify-content-between">
+<div class="toggles">
+<i id="toggle-icon" class="bi bi-list toggle-sidebar-btn"></i>
 </div>
+</div>
+<nav class="header-nav ms-auto">
+<ul class="d-flex align-items-center">
+<li class="nav-item d-block d-lg-none">
+<a class="nav-link nav-icon search-bar-toggle" style="margin-right: -15px;">
+<i class="fa fa-search faa-ring animated faa-slow"></i>
+</a>
+</li>
 
-</body>
-
-</html>
+<li class="nav-item dropdown">
+<a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown" style="margin-right: -15px;">
+<i class="bi bi-chat-left-text"></i>
+</a>
+<ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages pe-3 alight-center">
+<li class="dropdown-header">
+use this chat box properly and correctly.
+<a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">Cha-box</span></a>
+</li>
+<li>
+<hr class="dropdown-divider">
+</li>
+<li class="message-item">
+<a href="#">
+<iframe src="https://my.cbox.ws/YanzBotz" width="100%" height="550" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+</a>
+</li>
+<li>
+<hr class="dropdown-divider">
+</li>
+<li class="dropdown-footer">
+<a href="#"></a>
+</li>
+</ul>
+</li>
+<li class="nav-item dropdown pe-3">
+<a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+<div class="position-relative">
+<img class="rounded-circle" src="https://telegra.ph/file/f90fa948e64f8d9499bd0.jpg" alt>
+<div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
+</div>
+</a>
+<ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+<li>
+<hr class="dropdown-divider">
+</li>
+<li>
+<a class="dropdown-item d-flex align-items-center" href="/dashboard">
+<i class="bi bi-house-door"></i>
+<span>dashboard</span>
+</a>
+</li>
+<li>
+<hr class="dropdown-divider">
+</li>
+<li>
+<a class="dropdown-item d-flex align-items-center" href="https://wa.me//6285883359262">
+<i class="bi bi-person"></i>
+<span>login</span>
+</a>
+</li>
+<li>
+<hr class="dropdown-divider">
+</li>
+<li>
+<a class="dropdown-item d-flex align-items-center" href="https://wa.me//6285883359262">
+<i class="bi bi-person-add"></i>
+<span>Register</span>
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</header>
+<aside id="sidebar" class="sidebar" style="z-index:122;">
+<ul class="sidebar-nav" id="sidebar-nav">
+<h1 class="text-2xl text-center mt-4">YanzBotz - <span class="text-primary">APIs.</span></h1>
+<div class="mt-8">
+<div class="mb-4 relative lg:hidden false">
+</div>
+<li class="nav-item">
+<a class="nav-link collapsed" href="/dashboard">
+<i class="bi bi-house"></i>
+<span>Dashboard</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link collapsed" href="/pricing">
+<i class="bi bi-credit-card"></i>
+<span>Pricing</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link collapsed" href="/changelog">
+<i class="bi bi-repeat"></i>
+<span>Changelog</span>
+</a>
+</li>
+<li class="nav-heading">API FEATURE</li>
+<li class="nav-item">
+<a class="nav-link collapsed" href="/feature/downloader">
+<i class="bi bi-download">
+</i>
+<span>Downloader </span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link collapsed" href="/feature/information">
+<i class="bi bi-info-circle">
+</i>
+<span>Information </span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link collapsed" href="/feature/other">
+<i class="bi bi-motherboard">
+</i>
+<span>Other </span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link collapsed" href="/feature/tools">
+<i class="bi bi-tools">
+</i>
+<span>Tools </span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link collapsed" href="/feature/ai">
+<i class="bi bi-robot">
+</i>
+<span>AI </span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link collapsed" href="/feature/tts">
+<i class="bi bi-mic">
+</i>
+<span>Text To Speach</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link collapsed" href="/feature/text2img">
+<i class="bi bi-image">
+</i>
+<span>Text To Image</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link collapsed" href="/feature/islamic">
+<i class="bi bi-moon">
+</i>
+<span>Islamic</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link collapsed" href="/feature/cari">
+<i class="bi bi-search">
+</i>
+<span>Search</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link collapsed" href="/feature/img2img">
+<i class="bi bi-image">
+</i>
+<span>img2img</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link collapsed" href="/feature/game">
+<i class="bi bi-controller">
+</i>
+<span>Game</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link collapsed" href="/feature/stalker">
+<i class="bi bi-person-gear">
+</i>
+<span>Stalker</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link collapsed" href="/feature/maker">
+<i class="bi bi-pencil-square">
+</i>
+<span>Maker</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link collapsed" href="/feature/movie">
+<i class="bi bi-film">
+</i>
+<span>Movie Story</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link collapsed" href="/feature/photooxy">
+<i class="bi bi-camera">
+</i>
+<span>Photooxy</span>
+</a>
+</li>
+<li class="nav-heading">Contact</li>
+<li class="nav-item">
+<a class="nav-link collapsed" href="https://wa.me//6285883359262" target="_blank">
+<i class="bi bi-whatsapp"></i>
+<span>WhatsApp</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link collapsed" href="https://github.com/YanzBotz" target="_blank">
+<i class="bi bi-github"></i>
+<span>Github</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link collapsed" href="/help-center">
+<i class="bi bi-exclamation-lg"></i>
+<span>Help center</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link collapsed" href="/chatgpt">
+<i class="bi bi-chat"></i>
+<span>ChatGPT</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link collapsed" href="/upload">
+<i class="bi bi-upload"></i>
+<span>Uploader</span>
+</a>
+</li>
+</ul>
+</aside>
+<script>
+function _0x2587(_0x5a685a,_0x13851b){const _0x490f08=_0x490f();return _0x2587=function(_0x2587eb,_0x472878){_0x2587eb=_0x2587eb-0x131;let _0x144c16=_0x490f08[_0x2587eb];return _0x144c16;},_0x2587(_0x5a685a,_0x13851b);}function _0x490f(){const _0x3795bc=['1572809nyhGDM','addEventListener','querySelector','error','662544aMageI','click','.search-bar-toggle','37590BWitrk','toggle','div.search-bar','6Tdneqh','remove','#toggle-icon','864OVJppi','26627571bgUxIV','31691xRPkaB','search-bar-show','closest','classList','2257572OQDOei','toggle-sidebar','bi-x-lg','249800DujRFs','replace','.toggles','contains','bi-list','toggle-sidebar-btn'];_0x490f=function(){return _0x3795bc;};return _0x490f();}const _0x2d3876=_0x2587;(function(_0x3d94bf,_0x4eee17){const _0x149d68=_0x2587,_0x32d5de=_0x3d94bf();while(!![]){try{const _0x32af34=parseInt(_0x149d68(0x149))/0x1+-parseInt(_0x149d68(0x13e))/0x2*(parseInt(_0x149d68(0x144))/0x3)+-parseInt(_0x149d68(0x131))/0x4+-parseInt(_0x149d68(0x141))/0x5*(parseInt(_0x149d68(0x147))/0x6)+parseInt(_0x149d68(0x13a))/0x7+-parseInt(_0x149d68(0x134))/0x8+parseInt(_0x149d68(0x148))/0x9;if(_0x32af34===_0x4eee17)break;else _0x32d5de['push'](_0x32d5de['shift']());}catch(_0x4b09fd){_0x32d5de['push'](_0x32d5de['shift']());}}}(_0x490f,0xd5703));try{((()=>{const _0x59a4e0=_0x2587,_0x232ed4=_0x45b24c=>document[_0x59a4e0(0x13c)](_0x45b24c),_0x416609=_0x232ed4(_0x59a4e0(0x146));document[_0x59a4e0(0x13b)]('click',_0x93dd52=>{const _0x422855=_0x59a4e0;_0x93dd52=_0x93dd52['target'];if(!_0x93dd52['classList']['contains'](_0x422855(0x139))&&_0x232ed4('body')[_0x422855(0x14c)][_0x422855(0x137)](_0x422855(0x132))&&!_0x93dd52[_0x422855(0x14b)]('.sidebar'))_0x232ed4('body')['classList'][_0x422855(0x145)](_0x422855(0x132));if(!_0x93dd52[_0x422855(0x14b)](_0x422855(0x140))&&_0x232ed4(_0x422855(0x143))[_0x422855(0x14c)][_0x422855(0x137)](_0x422855(0x14a))&&!_0x93dd52['closest']('div.search-bar'))_0x232ed4(_0x422855(0x143))[_0x422855(0x14c)]['remove']('search-bar-show');}),_0x416609['addEventListener'](_0x59a4e0(0x13f),()=>{const _0x336f29=_0x59a4e0;_0x416609[_0x336f29(0x14c)]['toggle']('bi-list'),_0x416609['classList'][_0x336f29(0x142)]('bi-x-lg');}),document[_0x59a4e0(0x13b)]('click',_0x7e4997=>{const _0x51bfad=_0x59a4e0;!_0x7e4997['target'][_0x51bfad(0x14b)](_0x51bfad(0x136))&&_0x416609['classList'][_0x51bfad(0x137)]('bi-x-lg')&&_0x416609[_0x51bfad(0x14c)][_0x51bfad(0x135)](_0x51bfad(0x133),_0x51bfad(0x138));});})());}catch(_0x2ae519){console[_0x2d3876(0x13d)](_0x2ae519);}
+</script>
+<main id="main" class="main">
+<section class="section dashboard">
+<div class="row">
+<div class="col-lg-12">
+<div class="row">
+<div class="content-wrapper text-center col-xxl-4 col-xl-12">
+</div>
+<div class="col-xxl-4 col-md-6">
+<div class="card info-card">
+<div class="card-body">
+<h5 class="card-title">Clock</h5>
+<div class="d-flex align-items-center">
+<div class="card-icon alert alert-primary rounded-circle d-flex align-items-center justify-content-center">
+<i class="bi bi-clock"></i>
+</div>
+<div class="ps-3">
+<div class="weight-700 font-24 text-dark" id="browser_info">000</div>
+<div class="font-14 text-secondary weight-500" id="browser_sholat">waktu</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-xxl-4 col-md-6">
+<div class="card info-card">
+<div class="card-body">
+<h5 class="card-title">Visitors</h5>
+<div class="d-flex align-items-center">
+<div class="card-icon alert alert-info rounded-circle d-flex align-items-center justify-content-center">
+<i class="bi bi-eye"></i>
+</div>
+<div class="ps-3">
+<div class="weight-700 font-24 text-dark" id="visitor-count">0</div>
+<div class="font-14 text-secondary weight-500">visitors</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-xxl-4 col-xl-12">
+<div class="card info-card">
+<div class="card-body">
+<h5 class="card-title">Total Request</h5>
+<div class="d-flex align-items-center">
+<div class="card-icon alert alert-warning rounded-circle d-flex align-items-center justify-content-center">
+<i class="bi bi-bar-chart-fill"></i>
+</div>
+<div class="ps-3">
+<h6><span id="total-requests">0</span></h6>
+<span class="text-muted small pt-2 ps-1">Total All Request</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-xxl-4 col-xl-12">
+<div class="card info-card ">
+<div class="card-body">
+<h5 class="card-title">Battery Info</h5>
+<div class="d-flex align-items-center">
+<div class="card-icon alert alert-success rounded-circle d-flex align-items-center justify-content-center">
+<i class="bi bi-battery-full"></i>
+</div>
+<div class="ps-3">
+<div class="weight-700 font-24 text-dark" id="battery-level">%</div>
+<div class="font-14 text-secondary weight-500" id="charging-status">charging</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-xxl-4 col-xl-12">
+<a href="#" class="card-box d-block mx-auto pd-20 text-secondary">
+<div class="card-body">
+<strong><i class="bi bi-people-fill"></i> Thanks To:</strong>
+<div class="row">
+<div class="col-auto">
+<ul>
+<li>• Allah SWT.</li>
+<li>• Parents</li>
+<li>• Bang Ripza.</li>
+<li>• Bang iqbal.</li>
+<li>• Ryu 💕.</li>
+<li>• Bang usep.</li>
+<li>• Arifzyn.</li>
+<li>• Febzabotz.</li>
+<li>• DannTeam.</li>
+<li>• Dika Ardnt.</li>
+<li>• Arasya ( JOJO ).</li>
+<li>• Kelap Kelip.</li>
+<li>• Miftah.</li>
+<li>• Amirul Dev.</li>
+<li>• ExpressJS, Pasport, EJS &amp; MongoDB</li>
+<li>• The person who helped share this API</li>
+</ul>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<script>
+function _0x4d6b(){const _0xd2a262=['2660676XuArIx','Set\x20status\x20','5365104VpzLLa','getElementById','charging-status','catch','998625JJqAsd','getBattery','innerHTML','14021jMITDP','discharging','534WjNzoR','levelchange','Battery\x20API\x20not\x20supported\x20on\x20your\x20device/computer','15461874zdgmbZ','632549wgonVK','1313812hYKzgJ','then','addEventListener','level','3vFaNIH'];_0x4d6b=function(){return _0xd2a262;};return _0x4d6b();}function _0x15c3(_0x58ef58,_0x1982bc){const _0x4d6b59=_0x4d6b();return _0x15c3=function(_0x15c3a9,_0x160f0f){_0x15c3a9=_0x15c3a9-0x130;let _0x2a1c9b=_0x4d6b59[_0x15c3a9];return _0x2a1c9b;},_0x15c3(_0x58ef58,_0x1982bc);}(function(_0x1d5cc2,_0x31213d){const _0x379195=_0x15c3,_0x2254a1=_0x1d5cc2();while(!![]){try{const _0x568cc5=parseInt(_0x379195(0x13d))/0x1+-parseInt(_0x379195(0x13e))/0x2*(parseInt(_0x379195(0x142))/0x3)+-parseInt(_0x379195(0x143))/0x4+-parseInt(_0x379195(0x134))/0x5+parseInt(_0x379195(0x139))/0x6*(parseInt(_0x379195(0x137))/0x7)+-parseInt(_0x379195(0x130))/0x8+parseInt(_0x379195(0x13c))/0x9;if(_0x568cc5===_0x31213d)break;else _0x2254a1['push'](_0x2254a1['shift']());}catch(_0x131a91){_0x2254a1['push'](_0x2254a1['shift']());}}}(_0x4d6b,0x521ec),(function(){const _0x5b9e1d=_0x15c3;let _0x37c3c3=document[_0x5b9e1d(0x131)]('battery-level'),_0x105597=document[_0x5b9e1d(0x131)](_0x5b9e1d(0x132));navigator[_0x5b9e1d(0x135)]()[_0x5b9e1d(0x13f)](_0x17cae5=>{const _0x39a836=_0x5b9e1d;if(_0x17cae5){function _0x2e81e5(){const _0x2e6c3f=_0x15c3;_0x37c3c3[_0x2e6c3f(0x136)]=Math['round'](_0x17cae5[_0x2e6c3f(0x141)]*0x64)+'%',_0x105597[_0x2e6c3f(0x136)]=_0x17cae5['charging']?'⚡⚡':_0x2e6c3f(0x138),console['log'](_0x2e6c3f(0x144)+_0x37c3c3[_0x2e6c3f(0x136)]+'\x20'+_0x105597['innerHTML']);}_0x2e81e5(),_0x17cae5[_0x39a836(0x140)](_0x39a836(0x13a),_0x2e81e5,![]),_0x17cae5[_0x39a836(0x140)]('chargingchange',_0x2e81e5,![]);}else throw new Error(_0x39a836(0x13b));})[_0x5b9e1d(0x133)](_0x4a6576=>{});}()));
+</script>
+<script type="text/javascript">
+const _0x24abc0=_0x350d;function _0x350d(_0x2fead4,_0x45790b){const _0x2fc23e=_0x2fc2();return _0x350d=function(_0x350dbd,_0x588639){_0x350dbd=_0x350dbd-0x6f;let _0x49ad6a=_0x2fc23e[_0x350dbd];return _0x49ad6a;},_0x350d(_0x2fead4,_0x45790b);}(function(_0x3c626b,_0x26ea26){const _0x1419bd=_0x350d,_0x3eab1f=_0x3c626b();while(!![]){try{const _0x2c11cc=-parseInt(_0x1419bd(0x79))/0x1+-parseInt(_0x1419bd(0x6f))/0x2*(parseInt(_0x1419bd(0x8a))/0x3)+parseInt(_0x1419bd(0x76))/0x4*(-parseInt(_0x1419bd(0x81))/0x5)+-parseInt(_0x1419bd(0x85))/0x6+parseInt(_0x1419bd(0x7f))/0x7*(parseInt(_0x1419bd(0x71))/0x8)+parseInt(_0x1419bd(0x7b))/0x9+-parseInt(_0x1419bd(0x70))/0xa*(-parseInt(_0x1419bd(0x78))/0xb);if(_0x2c11cc===_0x26ea26)break;else _0x3eab1f['push'](_0x3eab1f['shift']());}catch(_0x3e22a7){_0x3eab1f['push'](_0x3eab1f['shift']());}}}(_0x2fc2,0x2b479));let text_el=document['querySelector']('div#browser_info'),hSalam=document[_0x24abc0(0x7c)](_0x24abc0(0x89));setInterval(()=>{const _0x1ace5e=_0x24abc0,_0x2789a8=new Date(),_0x3a29af=_0x2789a8[_0x1ace5e(0x80)]()[_0x1ace5e(0x86)]()[_0x1ace5e(0x75)](0x2,'0'),_0x10a4d5=_0x2789a8[_0x1ace5e(0x7e)]()[_0x1ace5e(0x86)]()['padStart'](0x2,'0'),_0x3935c6=_0x2789a8['getSeconds']()[_0x1ace5e(0x86)]()[_0x1ace5e(0x75)](0x2,'0'),_0x5efad9=getGreeting(_0x3a29af);hSalam['innerHTML']=_0x5efad9,text_el[_0x1ace5e(0x7d)]=_0x3a29af+':'+_0x10a4d5+':'+_0x3935c6;},0xfa);function _0x2fc2(){const _0x1b2840=['innerHTML','getMinutes','28749ysACWq','getHours','5TCmjaM','18:10','Selamat\x20Siang\x20kak!','17:00','497082ARUYsP','toString','10:00','Petang!','div#browser_sholat','318165KAGcwY','2DFLDpA','10BcczGZ','280PNGAjL','14:00','17:30','06:00','padStart','1082220lOrvPZ','Good\x20morning\x20sis,\x20don`t\x20forget\x20to\x20start\x20the\x20day\x20with\x20a\x20cup\x20of\x20coffee\x20☕\x20!','3862573RldGdB','173225CJSMvV','Selamat\x20Sorre\x20kak!','2835603bwoyix','querySelector'];_0x2fc2=function(){return _0x1b2840;};return _0x2fc2();}function getGreeting(_0x268eb2){const _0x4ad14e=_0x24abc0;if(_0x268eb2>='04:00'&&_0x268eb2<='06:00')return'Subuh!';else{if(_0x268eb2>=_0x4ad14e(0x74)&&_0x268eb2<=_0x4ad14e(0x87))return _0x4ad14e(0x77);else{if(_0x268eb2>='10:00'&&_0x268eb2<='14:00')return _0x4ad14e(0x83);else{if(_0x268eb2>=_0x4ad14e(0x72)&&_0x268eb2<=_0x4ad14e(0x84))return _0x4ad14e(0x7a);else{if(_0x268eb2>=_0x4ad14e(0x84)&&_0x268eb2<='17:30')return _0x4ad14e(0x88);else return _0x268eb2>=_0x4ad14e(0x73)&&_0x268eb2<=_0x4ad14e(0x82)?'Magrib!':'Selamat\x20Malam\x20kak!';}}}}}
+</script>
+<footer id="footer" class="footer">
+<div class="copyright">
+&copy; Copyright
+<strong>
+<span id="copyrightYearRange"></span>
+</strong> YanzBotz - APIs
+</div>
+</footer>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+<i class="bi bi-arrow-up-short"></i>
+</a>
+<script src="https://ferdiz-afk.github.io/Nice/assets/vendor/apexcharts/apexcharts.min.js"></script>
+<script src="https://ferdiz-afk.github.io/Nice/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://ferdiz-afk.github.io/Nice/assets/vendor/chart.js/chart.umd.js"></script>
+<script src="https://ferdiz-afk.github.io/Nice/assets/vendor/echarts/echarts.min.js"></script>
+<script src="https://ferdiz-afk.github.io/Nice/assets/vendor/quill/quill.min.js"></script>
+<script src="https://ferdiz-afk.github.io/Nice/assets/vendor/simple-datatables/simple-datatables.js"></script>
+<script src="https://ferdiz-afk.github.io/Nice/assets/vendor/tinymce/tinymce.min.js"></script>
+<script src="https://ferdiz-afk.github.io/Nice/assets/vendor/php-email-form/validate.js"></script>
+<script src="https://ferdiz-afk.github.io/Nice/assets/js/main.js"></script>
+<script>
+function _0x1a07(_0x30a0f7,_0x266da4){const _0x1ce287=_0x1ce2();return _0x1a07=function(_0x1a0725,_0x5ca3
