@@ -496,7 +496,40 @@ div.bottom {
 
 }
 
+.container {
+    position: relative;
+    width: calc(100% - 100px);
+    background: rgba(255, 255, 255, 0.308);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    min-height: calc(100vh - 280px);
+    min-height: 300px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    padding-top: 100px;
+    margin-top: 40px;
+}
 
+header {
+    position: absolute;
+    right: 20px;
+    left: 20px;
+    top: -40px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+        
 
 @media (max-width: 992px) {
 
